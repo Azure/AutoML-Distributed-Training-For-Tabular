@@ -18,7 +18,7 @@ When tabular data is large, a single node training often causes out of memory fa
 </ul>
 
 ## Contact
-For any question regarding AzureML Foundation models, please contact azmlfoundationmodels@microsoft.com
+For any question regarding this feature, please contact automlsupport@microsoft.com
 
 ## Contributing
 
