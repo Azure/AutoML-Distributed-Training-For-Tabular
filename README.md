@@ -12,7 +12,7 @@ When tabular data is large, a single node training often causes out of memory fa
 ## Characteristics of distributed training in AutoML
 <ul>
 	<li><b>Data size support:</b> For classification, regression - upto 1TB. For forecasting - upto 200GB.</li>
-	<li><b>Incompatible features:</b> 'Cross validation' and 'ONNX' features are not compatible with distributed training. Also AutoML will automatically make specific choices such as available featurizers, amount of data uses for validation, explainability and model evaluation.</li>
+	<li><b>Incompatible features:</b> 'Cross validation' and 'ONNX' features are not compatible with distributed training. Also AutoML will automatically make  choices such as restricting available featurizers, subsampling data used for validation, explainability and model evaluation.</li>
 </ul>
 
 
