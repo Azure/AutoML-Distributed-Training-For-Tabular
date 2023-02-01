@@ -13,9 +13,12 @@ When tabular data is large, a single node training often causes out of memory fa
 <ul>
 	<li><b>Data size support:</b> For classification, regression - upto 1TB. For forecasting - upto 200GB.</li>
 	<li><b>Models supported:</b> For classification, regression - Distributed LightGBM. For forecasting - Distributed TCN.</li>
-	<li><b>Incompatible features:</b> 'Cross validation', 'ONNX', "Code-gen", "Ensembling" features are not compatible with distributed training. Also AutoML may make  choices such as restricting available featurizers, subsampling data used for validation, explainability and model evaluation.</li>
+	<li><b>How to enable this feature?:</b> This feature can be enabled by simply adding few configurations to AutoMLConfig. Please follow the samples provided. Note that this feature is currently not supported through UI or CLI or V2 SDK. It is only supported through V1 SDK. However general availability of this feature will be only be made available through V2 SDK. </li>	
+	<li><b>Incompatible features:</b> 'Cross validation', 'ONNX', "Code-gen", "Ensembling" features are not compatible with distributed training. Also AutoML may make  choices such as restricting available featurizers, subsampling data used for validation, explainability and model evaluation.  Other experiences such as model registration, model deployment should work as expected. </li>
 </ul>
 
+## Contact
+For any question regarding AzureML Foundation models, please contact azmlfoundationmodels@microsoft.com
 
 ## Contributing
 
