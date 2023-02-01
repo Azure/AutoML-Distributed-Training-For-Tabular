@@ -5,13 +5,13 @@
 ## Welcome
 Welcome to the Private Preview release of AutoML distributed training for Tabular workloads.
 
-## What is 'AutoML distributed training for Tabular workloads'?
+## What is 'AutoML distributed training for Tabular workloads'
 By tabular workloads, we refer to workloads that are nlp or image workloads. These workloads typically consists of mixture of datatypes such as number, categorical, datetime and string datatypes. AutoML currently support 3 types of tasks for this workload, namely regression, classification and forecasting.
 When tabular data is large, a single node training often causes out of memory failures or is too slow to be useful. In such cases, distributed training is likely to build a successful model relatively quickly as AutoML will distribute data among multiple nodes and perform distributed featurization and distributed training.  
 
 ## Characteristics of distributed training in AutoML?
-**Data size support**: For classification, regression - upto 1TB. For forecasting - upto 200GB.
-**Incompatible features**: 'Cross validation' and 'ONNX' features are not compatible with distributed training. Also AutoML will automatically make specific choices such as available featurizers, amount of data uses for validation, explainability and model evaluation.
+</i>**Data size support**: For classification, regression - upto 1TB. For forecasting - upto 200GB.</i>
+</i>**Incompatible features**: 'Cross validation' and 'ONNX' features are not compatible with distributed training. Also AutoML will automatically make specific choices such as available featurizers, amount of data uses for validation, explainability and model evaluation.</i>
 
 
 ## Contributing
