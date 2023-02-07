@@ -27,11 +27,18 @@ def partition_required(dataset, partition_column_names):
     return True
 
 
-def partition_dataset(input_dataset, partition_column_names, partitioned_dataset_name, datastore):
-    print(f"Performing dataset partition with partition columns: {partition_column_names}")
+def partition_dataset(
+    input_dataset, partition_column_names, partitioned_dataset_name, datastore
+):
+    print(
+        f"Performing dataset partition with partition columns: {partition_column_names}"
+    )
     input_dataset.partition_by(
-        partition_keys=partition_column_names, partition_as_file_dataset=False,
-        target=(datastore, partitioned_dataset_name), name=partitioned_dataset_name)
+        partition_keys=partition_column_names,
+        partition_as_file_dataset=False,
+        target=(datastore, partitioned_dataset_name),
+        name=partitioned_dataset_name,
+    )
 
 
 def main():
@@ -45,14 +52,13 @@ def main():
     ws = run_context.experiment.workspace
 
     datastore = Datastore.get(ws, datastore_name)
-    input_dataset = Dataset.Tabular.from_delimited_files(path=(datastore, input_data_path))
+    input_dataset = Dataset.Tabular.from_delimited_files(
+        path=(datastore, input_data_path)
+    )
 
     if partition_required(input_dataset, partition_column_names):
         partition_dataset(
-            input_dataset,
-            partition_column_names,
-            partitioned_dataset_name,
-            datastore
+            input_dataset, partition_column_names, partitioned_dataset_name, datastore
         )
     else:
         raise Exception("Dataset partitioning is not required.")

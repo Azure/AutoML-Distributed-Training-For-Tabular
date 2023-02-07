@@ -130,7 +130,7 @@ def get_prs_args(
     time_series_id_column_names,
     test_split=0.2,
     valid_split=0.2,
-    first_task_creation_timeout=2400
+    first_task_creation_timeout=2400,
 ):
     """
     Returns the arguments for PRS.
@@ -219,7 +219,7 @@ def get_partition_str(time_series_id_column_names):
     partition_format = ""
     partition_path = ""
     for key in time_series_id_column_names:
-        partition_format = partition_format + '{' + key + '}/'
+        partition_format = partition_format + "{" + key + "}/"
         partition_path += "*/"
     partition_format += "*.parquet"
     partition_path += "*.parquet"
