@@ -167,11 +167,13 @@ def get_prs_args(
 
 
 def register_dataset(
-    src_dir, target, name, partition_column_names=None, overwrite=True
+    workspace, src_dir, target, name, partition_column_names=None, overwrite=True
 ):
     """
     Register a dataset in the workspace.
 
+    :param workspace: The workspace in which the Dataset will be registered.
+    :type workspace: azureml.core.Workspace
     :param src_dir: The local directory to upload.
     :type src_dir: str
     :param target: Relative path to the datastore where files will be uploaded to.
@@ -184,8 +186,7 @@ def register_dataset(
     :return: The registered dataset.
     :rtype: azureml.data.TabularDataset
     """
-    ws = Workspace.from_config()
-    datastore = ws.get_default_datastore()
+    datastore = workspace.get_default_datastore()
 
     Dataset.File.upload_directory(
         src_dir=src_dir,
@@ -196,7 +197,7 @@ def register_dataset(
         path=DataPath(datastore, target + "/raw")
     )
     if not partition_column_names:
-        return data.register(workspace=ws, name=name)
+        return data.register(workspace=workspace, name=name)
     else:
         return data.partition_by(
             partition_keys=partition_column_names,
